@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		973EA6211F1C932A00A04717 /* EmotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 973EA6201F1C932A00A04717 /* EmotionsViewController.swift */; };
 		9742BD321F1A530500496E57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9742BD311F1A530500496E57 /* AppDelegate.swift */; };
-		9742BD341F1A530500496E57 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9742BD331F1A530500496E57 /* ViewController.swift */; };
+		9742BD341F1A530500496E57 /* FaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9742BD331F1A530500496E57 /* FaceViewController.swift */; };
 		9742BD371F1A530500496E57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9742BD351F1A530500496E57 /* Main.storyboard */; };
 		9742BD391F1A530500496E57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9742BD381F1A530500496E57 /* Assets.xcassets */; };
 		9742BD3C1F1A530500496E57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9742BD3A1F1A530500496E57 /* LaunchScreen.storyboard */; };
@@ -17,9 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		973EA6201F1C932A00A04717 /* EmotionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionsViewController.swift; sourceTree = "<group>"; };
 		9742BD2E1F1A530500496E57 /* Learning Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Learning Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9742BD311F1A530500496E57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9742BD331F1A530500496E57 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9742BD331F1A530500496E57 /* FaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceViewController.swift; sourceTree = "<group>"; };
 		9742BD361F1A530500496E57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9742BD381F1A530500496E57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9742BD3B1F1A530500496E57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,11 +60,12 @@
 		9742BD301F1A530500496E57 /* Learning Swift */ = {
 			isa = PBXGroup;
 			children = (
-				9742BD331F1A530500496E57 /* ViewController.swift */,
+				9742BD331F1A530500496E57 /* FaceViewController.swift */,
 				9742BD351F1A530500496E57 /* Main.storyboard */,
 				97C8A3A41F1BA01C0000CB8D /* FaceView.swift */,
 				9742BD431F1A538D00496E57 /* Supporting FIles */,
 				97C8A3A61F1BA0A20000CB8D /* FacialExpression.swift */,
+				973EA6201F1C932A00A04717 /* EmotionsViewController.swift */,
 			);
 			path = "Learning Swift";
 			sourceTree = "<group>";
@@ -151,8 +154,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9742BD341F1A530500496E57 /* ViewController.swift in Sources */,
+				9742BD341F1A530500496E57 /* FaceViewController.swift in Sources */,
 				97C8A3A71F1BA0A20000CB8D /* FacialExpression.swift in Sources */,
+				973EA6211F1C932A00A04717 /* EmotionsViewController.swift in Sources */,
 				9742BD321F1A530500496E57 /* AppDelegate.swift in Sources */,
 				97C8A3A51F1BA01C0000CB8D /* FaceView.swift in Sources */,
 			);
