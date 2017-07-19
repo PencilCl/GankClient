@@ -11,6 +11,7 @@
 		9742BD371F1A530500496E57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9742BD351F1A530500496E57 /* Main.storyboard */; };
 		9742BD391F1A530500496E57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9742BD381F1A530500496E57 /* Assets.xcassets */; };
 		9742BD3C1F1A530500496E57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9742BD3A1F1A530500496E57 /* LaunchScreen.storyboard */; };
+		97CDDC311F1F690500EC52EE /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CDDC301F1F690500EC52EE /* PictureViewController.swift */; };
 		97E42BD41F1DB9C300B2C73F /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97E42BD31F1DB9C300B2C73F /* ImageViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +22,7 @@
 		9742BD381F1A530500496E57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9742BD3B1F1A530500496E57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9742BD3D1F1A530500496E57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97CDDC301F1F690500EC52EE /* PictureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
 		97E42BD31F1DB9C300B2C73F /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -57,6 +59,7 @@
 				9742BD351F1A530500496E57 /* Main.storyboard */,
 				9742BD431F1A538D00496E57 /* Supporting FIles */,
 				97E42BD31F1DB9C300B2C73F /* ImageViewController.swift */,
+				97CDDC301F1F690500EC52EE /* PictureViewController.swift */,
 			);
 			path = "Learning Swift";
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				97E42BD41F1DB9C300B2C73F /* ImageViewController.swift in Sources */,
+				97CDDC311F1F690500EC52EE /* PictureViewController.swift in Sources */,
 				9742BD321F1A530500496E57 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,36 +9,46 @@
 import UIKit
 
 class ImageViewController: UIViewController {
-    @IBOutlet weak var scrollView: UIScrollView!
+    
+    @IBOutlet weak var scrollView: UIScrollView! {
+        didSet {
+            scrollView.maximumZoomScale = 1.0
+            scrollView.minimumZoomScale = 0.03
+            scrollView.delegate = self
+            scrollView.addSubview(imageView)
+        }
+    }
 
-    private var imageUrl: URL? {
+    var imageUrl: URL? {
         didSet {
             image = nil
             fetchImage()
         }
     }
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     private func fetchImage() {
         if let url = imageUrl {
-            let urlContents = try? Data(contentsOf: url)
-            if let data = urlContents {
-                image = UIImage(data: data)
+            spinner?.startAnimating()
+            DispatchQueue.global().async { [weak self] in
+                let urlContents = try? Data(contentsOf: url)
+                if let data = urlContents, url == self?.imageUrl {
+                    DispatchQueue.main.async {
+                        self?.image = UIImage(data: data)
+                    }
+                }
             }
-        } else {
-            print("url is nil")
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if image == nil {
+            fetchImage()
         }
     }
     
     fileprivate let imageView = UIImageView()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        scrollView.maximumZoomScale = 1.0
-        scrollView.minimumZoomScale = 0.03
-        scrollView.delegate = self
-        scrollView.addSubview(imageView)
-        imageUrl = URL(string: "http://www.tensorfly.cn/images/hero-bg@2x.jpg")
-    }
     
     private var image: UIImage? {
         get {
@@ -47,7 +57,8 @@ class ImageViewController: UIViewController {
         set {
             imageView.image = newValue
             imageView.sizeToFit()
-            scrollView.contentSize = imageView.frame.size
+            scrollView?.contentSize = imageView.frame.size
+            spinner?.stopAnimating()
         }
     }
 
