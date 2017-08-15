@@ -7,27 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		970AC0FF1F2087760079A131 /* GankTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970AC0FE1F2087760079A131 /* GankTableViewController.swift */; };
-		970AC1011F208F1E0079A131 /* GankService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970AC1001F208F1E0079A131 /* GankService.swift */; };
-		970AC1051F2090120079A131 /* Gank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970AC1041F2090120079A131 /* Gank.swift */; };
-		970AC1071F20B5BB0079A131 /* GankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970AC1061F20B5BB0079A131 /* GankTableViewCell.swift */; };
 		9742BD321F1A530500496E57 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9742BD311F1A530500496E57 /* AppDelegate.swift */; };
 		9742BD371F1A530500496E57 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9742BD351F1A530500496E57 /* Main.storyboard */; };
 		9742BD391F1A530500496E57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9742BD381F1A530500496E57 /* Assets.xcassets */; };
 		9742BD3C1F1A530500496E57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9742BD3A1F1A530500496E57 /* LaunchScreen.storyboard */; };
+		9797BA471F43174700E288D9 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA461F43174700E288D9 /* Logger.swift */; };
+		9797BA4E1F431AB000E288D9 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA4D1F431AB000E288D9 /* TabBarViewController.swift */; };
+		9797BA531F431D5600E288D9 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA521F431D5600E288D9 /* TodayViewController.swift */; };
+		9797BA5B1F431E5A00E288D9 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA5A1F431E5A00E288D9 /* CategoryViewController.swift */; };
+		9797BA5D1F431E6200E288D9 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA5C1F431E6200E288D9 /* UserViewController.swift */; };
+		C1431EA660AB098539B94E0A /* Pods_Learning_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7051E05ED4E412B541D84334 /* Pods_Learning_Swift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		970AC0FE1F2087760079A131 /* GankTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GankTableViewController.swift; sourceTree = "<group>"; };
-		970AC1001F208F1E0079A131 /* GankService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GankService.swift; sourceTree = "<group>"; };
-		970AC1041F2090120079A131 /* Gank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gank.swift; sourceTree = "<group>"; };
-		970AC1061F20B5BB0079A131 /* GankTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GankTableViewCell.swift; sourceTree = "<group>"; };
+		29AF695111E376313BCAAEBA /* Pods-Learning Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Learning Swift.release.xcconfig"; path = "Pods/Target Support Files/Pods-Learning Swift/Pods-Learning Swift.release.xcconfig"; sourceTree = "<group>"; };
+		7051E05ED4E412B541D84334 /* Pods_Learning_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Learning_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9742BD2E1F1A530500496E57 /* Learning Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Learning Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9742BD311F1A530500496E57 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9742BD361F1A530500496E57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9742BD381F1A530500496E57 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9742BD3B1F1A530500496E57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9742BD3D1F1A530500496E57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9797BA461F43174700E288D9 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		9797BA4D1F431AB000E288D9 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		9797BA521F431D5600E288D9 /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		9797BA5A1F431E5A00E288D9 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		9797BA5C1F431E6200E288D9 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		B699511A5E7AC0789FCAB255 /* Pods-Learning Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Learning Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Learning Swift/Pods-Learning Swift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,24 +41,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1431EA660AB098539B94E0A /* Pods_Learning_Swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		970AC1021F208FBB0079A131 /* service */ = {
+		37003B0150F2162EE05A077E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				970AC1001F208F1E0079A131 /* GankService.swift */,
+				7051E05ED4E412B541D84334 /* Pods_Learning_Swift.framework */,
 			);
-			name = service;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49BEE98D0F3B9059B1D95BE4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B699511A5E7AC0789FCAB255 /* Pods-Learning Swift.debug.xcconfig */,
+				29AF695111E376313BCAAEBA /* Pods-Learning Swift.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		970AC1021F208FBB0079A131 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Service;
 			sourceTree = "<group>";
 		};
 		970AC1031F208FFC0079A131 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				970AC1041F2090120079A131 /* Gank.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -62,6 +84,8 @@
 			children = (
 				9742BD301F1A530500496E57 /* Learning Swift */,
 				9742BD2F1F1A530500496E57 /* Products */,
+				49BEE98D0F3B9059B1D95BE4 /* Pods */,
+				37003B0150F2162EE05A077E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,12 +100,13 @@
 		9742BD301F1A530500496E57 /* Learning Swift */ = {
 			isa = PBXGroup;
 			children = (
-				970AC1031F208FFC0079A131 /* Entity */,
-				9742BD351F1A530500496E57 /* Main.storyboard */,
-				970AC0FE1F2087760079A131 /* GankTableViewController.swift */,
-				970AC1021F208FBB0079A131 /* service */,
+				9797BA571F431DC000E288D9 /* Extension */,
+				9797BA481F43197500E288D9 /* Controller */,
 				9742BD431F1A538D00496E57 /* Supporting FIles */,
-				970AC1061F20B5BB0079A131 /* GankTableViewCell.swift */,
+				970AC1031F208FFC0079A131 /* Entity */,
+				970AC1021F208FBB0079A131 /* Service */,
+				9797BA451F43173500E288D9 /* Helper */,
+				9742BD351F1A530500496E57 /* Main.storyboard */,
 			);
 			path = "Learning Swift";
 			sourceTree = "<group>";
@@ -97,6 +122,56 @@
 			name = "Supporting FIles";
 			sourceTree = "<group>";
 		};
+		9797BA451F43173500E288D9 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				9797BA461F43174700E288D9 /* Logger.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		9797BA481F43197500E288D9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9797BA511F431CCD00E288D9 /* User */,
+				9797BA501F431CC800E288D9 /* Category */,
+				9797BA4F1F431CC300E288D9 /* Today */,
+				9797BA4D1F431AB000E288D9 /* TabBarViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		9797BA4F1F431CC300E288D9 /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				9797BA521F431D5600E288D9 /* TodayViewController.swift */,
+			);
+			name = Today;
+			sourceTree = "<group>";
+		};
+		9797BA501F431CC800E288D9 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				9797BA5A1F431E5A00E288D9 /* CategoryViewController.swift */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
+		9797BA511F431CCD00E288D9 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				9797BA5C1F431E6200E288D9 /* UserViewController.swift */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		9797BA571F431DC000E288D9 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -104,9 +179,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9742BD401F1A530500496E57 /* Build configuration list for PBXNativeTarget "Learning Swift" */;
 			buildPhases = (
+				E598244F5943C5EC1C3D6DDB /* [CP] Check Pods Manifest.lock */,
 				9742BD2A1F1A530500496E57 /* Sources */,
 				9742BD2B1F1A530500496E57 /* Frameworks */,
 				9742BD2C1F1A530500496E57 /* Resources */,
+				E4DFED9C89D8A564D854DDB1 /* [CP] Embed Pods Frameworks */,
+				EA4BC3D0C0E448321AC61595 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -165,16 +243,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E4DFED9C89D8A564D854DDB1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Learning Swift/Pods-Learning Swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E598244F5943C5EC1C3D6DDB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EA4BC3D0C0E448321AC61595 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Learning Swift/Pods-Learning Swift-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9742BD2A1F1A530500496E57 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9797BA5B1F431E5A00E288D9 /* CategoryViewController.swift in Sources */,
+				9797BA5D1F431E6200E288D9 /* UserViewController.swift in Sources */,
+				9797BA531F431D5600E288D9 /* TodayViewController.swift in Sources */,
 				9742BD321F1A530500496E57 /* AppDelegate.swift in Sources */,
-				970AC1011F208F1E0079A131 /* GankService.swift in Sources */,
-				970AC1051F2090120079A131 /* Gank.swift in Sources */,
-				970AC0FF1F2087760079A131 /* GankTableViewController.swift in Sources */,
-				970AC1071F20B5BB0079A131 /* GankTableViewCell.swift in Sources */,
+				9797BA4E1F431AB000E288D9 /* TabBarViewController.swift in Sources */,
+				9797BA471F43174700E288D9 /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,8 +422,8 @@
 		};
 		9742BD411F1A530500496E57 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B699511A5E7AC0789FCAB255 /* Pods-Learning Swift.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9KP78P9R9V;
 				INFOPLIST_FILE = "Learning Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -308,8 +435,8 @@
 		};
 		9742BD421F1A530500496E57 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29AF695111E376313BCAAEBA /* Pods-Learning Swift.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9KP78P9R9V;
 				INFOPLIST_FILE = "Learning Swift/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
