@@ -5,4 +5,5 @@ target 'Learning Swift' do
   use_frameworks!
 
   pod 'XCGLogger', '~> 5.0.1'
+  pod 'JTAppleCalendar', '~> 7.0'
 end
