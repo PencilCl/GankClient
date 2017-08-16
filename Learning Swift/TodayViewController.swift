@@ -15,6 +15,15 @@ class TodayViewController: UIViewController {
          "data": [
             ["title": "标题",
              "url": "url",
+             "author": "作者"],
+            ["title": "标题",
+             "url": "url",
+             "author": "作者"],
+            ["title": "标题",
+             "url": "url",
+             "author": "作者"],
+            ["title": "标题",
+             "url": "url",
              "author": "作者"]
             ]
         ],
@@ -80,5 +89,13 @@ extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dailyDataCell", for: indexPath)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        defer {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+        
+        log.debug("\(indexPath.row) row \(indexPath.section) section")
     }
 }

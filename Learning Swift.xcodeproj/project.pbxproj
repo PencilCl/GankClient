@@ -22,6 +22,7 @@
 		9797BA681F445ECA00E288D9 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA671F445ECA00E288D9 /* CalendarViewController.swift */; };
 		9797BA6A1F446D6600E288D9 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA691F446D6600E288D9 /* StringExtension.swift */; };
 		9797BA6C1F446EF700E288D9 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA6B1F446EF700E288D9 /* UIColorExtension.swift */; };
+		9797BA711F447DE000E288D9 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA701F447DE000E288D9 /* CategoryCollectionViewCell.swift */; };
 		C1431EA660AB098539B94E0A /* Pods_Learning_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7051E05ED4E412B541D84334 /* Pods_Learning_Swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		9797BA671F445ECA00E288D9 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		9797BA691F446D6600E288D9 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		9797BA6B1F446EF700E288D9 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		9797BA701F447DE000E288D9 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		B699511A5E7AC0789FCAB255 /* Pods-Learning Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Learning Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Learning Swift/Pods-Learning Swift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -191,6 +193,7 @@
 		9797BA6D1F44701900E288D9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				9797BA6F1F447DC900E288D9 /* Category */,
 				9797BA6E1F44702A00E288D9 /* Today */,
 			);
 			name = View;
@@ -204,6 +207,14 @@
 				9797BA601F43D37500E288D9 /* DailyDataTableViewCell.swift */,
 			);
 			name = Today;
+			sourceTree = "<group>";
+		};
+		9797BA6F1F447DC900E288D9 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				9797BA701F447DE000E288D9 /* CategoryCollectionViewCell.swift */,
+			);
+			name = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +347,7 @@
 				9797BA5D1F431E6200E288D9 /* UserViewController.swift in Sources */,
 				9797BA531F431D5600E288D9 /* TodayViewController.swift in Sources */,
 				9742BD321F1A530500496E57 /* AppDelegate.swift in Sources */,
+				9797BA711F447DE000E288D9 /* CategoryCollectionViewCell.swift in Sources */,
 				9797BA4E1F431AB000E288D9 /* TabBarViewController.swift in Sources */,
 				9797BA651F445D6E00E288D9 /* CalendarCollectionViewCell.swift in Sources */,
 				9797BA471F43174700E288D9 /* Logger.swift in Sources */,
