@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="干货集中营" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ugt-OC-fna">
-                                <rect key="frame" x="166" y="227" width="42" height="213"/>
+                                <rect key="frame" x="166" y="232" width="42" height="203"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="42" id="xvg-G7-7Lu"/>
                                 </constraints>
@@ -31,9 +31,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="http://gank.io/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54v-uO-FqJ">
-                                <rect key="frame" x="126" y="626" width="123" height="21"/>
+                                <rect key="frame" x="128.5" y="626" width="118.5" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="123" id="GjX-6L-s2J"/>
+                                    <constraint firstAttribute="height" constant="21" id="IS3-sH-nhK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -41,13 +41,15 @@
                             </label>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="AppIcon" translatesAutoresizingMaskIntoConstraints="NO" id="5xs-10-XGY">
                                 <rect key="frame" x="157" y="558" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="5zx-Dg-1Le"/>
+                                </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.92156862745098034" green="0.90980392156862744" blue="0.84313725490196079" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="5xs-10-XGY" firstAttribute="centerX" secondItem="54v-uO-FqJ" secondAttribute="centerX" id="4kB-Rg-Rxr"/>
-                            <constraint firstItem="Ugt-OC-fna" firstAttribute="centerX" secondItem="5xs-10-XGY" secondAttribute="centerX" id="7hn-OA-fw7"/>
-                            <constraint firstItem="Ugt-OC-fna" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="207" id="Chr-6o-7wq"/>
+                            <constraint firstItem="5xs-10-XGY" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="0ux-Av-y4V"/>
+                            <constraint firstItem="54v-uO-FqJ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="QxZ-Cd-bOU"/>
                             <constraint firstItem="54v-uO-FqJ" firstAttribute="top" secondItem="5xs-10-XGY" secondAttribute="bottom" constant="8" symbolic="YES" id="YQn-nK-miB"/>
                             <constraint firstItem="Ugt-OC-fna" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ZWf-Of-drw"/>
                             <constraint firstAttribute="bottom" secondItem="54v-uO-FqJ" secondAttribute="bottom" constant="20" symbolic="YES" id="mFd-CT-5dY"/>
