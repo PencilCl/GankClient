@@ -11,19 +11,26 @@ import UIKit
 class CategoryViewController: UIViewController {
     
     let categorys = [
-        ["category": "All", "icon": #imageLiteral(resourceName: "all")],
-        ["category": "iOS", "icon": #imageLiteral(resourceName: "ios")],
-        ["category": "Android", "icon": #imageLiteral(resourceName: "android")],
-        ["category": "前端", "icon": #imageLiteral(resourceName: "frontend")],
-        ["category": "拓展资源", "icon": #imageLiteral(resourceName: "resouce")],
-        ["category": "App", "icon": #imageLiteral(resourceName: "app")],
-        ["category": "瞎推荐", "icon": #imageLiteral(resourceName: "recommend")],
-        ["category": "休息视频", "icon": #imageLiteral(resourceName: "vedio")],
-        ["category": "福利", "icon": #imageLiteral(resourceName: "meizi")],
+        ["category": Category.all, "icon": #imageLiteral(resourceName: "all")],
+        ["category": Category.ios, "icon": #imageLiteral(resourceName: "ios")],
+        ["category": Category.android, "icon": #imageLiteral(resourceName: "android")],
+        ["category": Category.frontend, "icon": #imageLiteral(resourceName: "frontend")],
+        ["category": Category.resource, "icon": #imageLiteral(resourceName: "resouce")],
+        ["category": Category.app, "icon": #imageLiteral(resourceName: "app")],
+        ["category": Category.recommend, "icon": #imageLiteral(resourceName: "recommend")],
+        ["category": Category.vedio, "icon": #imageLiteral(resourceName: "vedio")],
+        ["category": Category.meizi, "icon": #imageLiteral(resourceName: "meizi")],
     ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let desVC = segue.destination as? GankListViewController,
+            let title = sender as? Category {
+            desVC.title = title.rawValue
+        }
     }
 
 }
@@ -36,12 +43,12 @@ extension CategoryViewController: UICollectionViewDelegate, UICollectionViewData
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCollectionViewCell
         cell.iconImageView.image = categorys[indexPath.row]["icon"] as? UIImage
-        cell.categoryLabel.text = categorys[indexPath.row]["category"] as? String
+        cell.categoryLabel.text = (categorys[indexPath.row]["category"] as? Category)?.rawValue
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        log.debug("selected category: \(categorys[indexPath.row]["category"] as! String)")
+        performSegue(withIdentifier: "gankList", sender: categorys[indexPath.row]["category"])
     }
     
 }

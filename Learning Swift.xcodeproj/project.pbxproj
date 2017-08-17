@@ -25,6 +25,8 @@
 		9797BA731F44860600E288D9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA721F44860600E288D9 /* SearchViewController.swift */; };
 		9797BA7A1F45CF5F00E288D9 /* GankTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9797BA781F45CF5F00E288D9 /* GankTableViewCell.xib */; };
 		9797BA7C1F45D4B700E288D9 /* GankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA7B1F45D4B700E288D9 /* GankTableViewCell.swift */; };
+		9797BA7E1F45E55F00E288D9 /* GankListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA7D1F45E55F00E288D9 /* GankListViewController.swift */; };
+		9797BA811F45E8D900E288D9 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA801F45E8D900E288D9 /* Enum.swift */; };
 		C1431EA660AB098539B94E0A /* Pods_Learning_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7051E05ED4E412B541D84334 /* Pods_Learning_Swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +53,8 @@
 		9797BA721F44860600E288D9 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		9797BA781F45CF5F00E288D9 /* GankTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GankTableViewCell.xib; sourceTree = "<group>"; };
 		9797BA7B1F45D4B700E288D9 /* GankTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GankTableViewCell.swift; sourceTree = "<group>"; };
+		9797BA7D1F45E55F00E288D9 /* GankListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GankListViewController.swift; sourceTree = "<group>"; };
+		9797BA801F45E8D900E288D9 /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		B699511A5E7AC0789FCAB255 /* Pods-Learning Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Learning Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Learning Swift/Pods-Learning Swift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,6 +122,7 @@
 		9742BD301F1A530500496E57 /* Learning Swift */ = {
 			isa = PBXGroup;
 			children = (
+				9797BA7F1F45E8CC00E288D9 /* Constant */,
 				9797BA571F431DC000E288D9 /* Extension */,
 				9797BA741F45CEDB00E288D9 /* Cell */,
 				9797BA481F43197500E288D9 /* Controller */,
@@ -174,6 +179,7 @@
 			children = (
 				9797BA5A1F431E5A00E288D9 /* CategoryViewController.swift */,
 				9797BA721F44860600E288D9 /* SearchViewController.swift */,
+				9797BA7D1F45E55F00E288D9 /* GankListViewController.swift */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -221,6 +227,14 @@
 				9797BA6F1F447DC900E288D9 /* Category */,
 			);
 			name = Cell;
+			sourceTree = "<group>";
+		};
+		9797BA7F1F45E8CC00E288D9 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				9797BA801F45E8D900E288D9 /* Enum.swift */,
+			);
+			name = Constant;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,10 +367,12 @@
 				9797BA5B1F431E5A00E288D9 /* CategoryViewController.swift in Sources */,
 				9797BA5D1F431E6200E288D9 /* UserViewController.swift in Sources */,
 				9797BA531F431D5600E288D9 /* TodayViewController.swift in Sources */,
+				9797BA7E1F45E55F00E288D9 /* GankListViewController.swift in Sources */,
 				9742BD321F1A530500496E57 /* AppDelegate.swift in Sources */,
 				9797BA711F447DE000E288D9 /* CategoryCollectionViewCell.swift in Sources */,
 				9797BA4E1F431AB000E288D9 /* TabBarViewController.swift in Sources */,
 				9797BA731F44860600E288D9 /* SearchViewController.swift in Sources */,
+				9797BA811F45E8D900E288D9 /* Enum.swift in Sources */,
 				9797BA7C1F45D4B700E288D9 /* GankTableViewCell.swift in Sources */,
 				9797BA651F445D6E00E288D9 /* CalendarCollectionViewCell.swift in Sources */,
 				9797BA471F43174700E288D9 /* Logger.swift in Sources */,

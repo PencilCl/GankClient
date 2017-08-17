@@ -72,7 +72,7 @@ class TodayViewController: UIViewController {
 extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return data.count
-    }«
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (data[section]["data"] as? [[String: String]])?.count ?? 0
