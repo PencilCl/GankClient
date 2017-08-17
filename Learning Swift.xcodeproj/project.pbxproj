@@ -16,13 +16,15 @@
 		9797BA531F431D5600E288D9 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA521F431D5600E288D9 /* TodayViewController.swift */; };
 		9797BA5B1F431E5A00E288D9 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA5A1F431E5A00E288D9 /* CategoryViewController.swift */; };
 		9797BA5D1F431E6200E288D9 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA5C1F431E6200E288D9 /* UserViewController.swift */; };
-		9797BA611F43D37500E288D9 /* DailyDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA601F43D37500E288D9 /* DailyDataTableViewCell.swift */; };
 		9797BA631F43D43D00E288D9 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA621F43D43D00E288D9 /* HeaderTableViewCell.swift */; };
 		9797BA651F445D6E00E288D9 /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA641F445D6E00E288D9 /* CalendarCollectionViewCell.swift */; };
 		9797BA681F445ECA00E288D9 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA671F445ECA00E288D9 /* CalendarViewController.swift */; };
 		9797BA6A1F446D6600E288D9 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA691F446D6600E288D9 /* StringExtension.swift */; };
 		9797BA6C1F446EF700E288D9 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA6B1F446EF700E288D9 /* UIColorExtension.swift */; };
 		9797BA711F447DE000E288D9 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA701F447DE000E288D9 /* CategoryCollectionViewCell.swift */; };
+		9797BA731F44860600E288D9 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA721F44860600E288D9 /* SearchViewController.swift */; };
+		9797BA7A1F45CF5F00E288D9 /* GankTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9797BA781F45CF5F00E288D9 /* GankTableViewCell.xib */; };
+		9797BA7C1F45D4B700E288D9 /* GankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA7B1F45D4B700E288D9 /* GankTableViewCell.swift */; };
 		C1431EA660AB098539B94E0A /* Pods_Learning_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7051E05ED4E412B541D84334 /* Pods_Learning_Swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,13 +42,15 @@
 		9797BA521F431D5600E288D9 /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		9797BA5A1F431E5A00E288D9 /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		9797BA5C1F431E6200E288D9 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
-		9797BA601F43D37500E288D9 /* DailyDataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyDataTableViewCell.swift; sourceTree = "<group>"; };
 		9797BA621F43D43D00E288D9 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		9797BA641F445D6E00E288D9 /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
 		9797BA671F445ECA00E288D9 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		9797BA691F446D6600E288D9 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		9797BA6B1F446EF700E288D9 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		9797BA701F447DE000E288D9 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		9797BA721F44860600E288D9 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		9797BA781F45CF5F00E288D9 /* GankTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GankTableViewCell.xib; sourceTree = "<group>"; };
+		9797BA7B1F45D4B700E288D9 /* GankTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GankTableViewCell.swift; sourceTree = "<group>"; };
 		B699511A5E7AC0789FCAB255 /* Pods-Learning Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Learning Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Learning Swift/Pods-Learning Swift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -115,7 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				9797BA571F431DC000E288D9 /* Extension */,
-				9797BA6D1F44701900E288D9 /* View */,
+				9797BA741F45CEDB00E288D9 /* Cell */,
 				9797BA481F43197500E288D9 /* Controller */,
 				9742BD431F1A538D00496E57 /* Supporting FIles */,
 				970AC1031F208FFC0079A131 /* Entity */,
@@ -169,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				9797BA5A1F431E5A00E288D9 /* CategoryViewController.swift */,
+				9797BA721F44860600E288D9 /* SearchViewController.swift */,
 			);
 			name = Category;
 			sourceTree = "<group>";
@@ -190,21 +195,11 @@
 			name = Extension;
 			sourceTree = "<group>";
 		};
-		9797BA6D1F44701900E288D9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				9797BA6F1F447DC900E288D9 /* Category */,
-				9797BA6E1F44702A00E288D9 /* Today */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
 		9797BA6E1F44702A00E288D9 /* Today */ = {
 			isa = PBXGroup;
 			children = (
 				9797BA641F445D6E00E288D9 /* CalendarCollectionViewCell.swift */,
 				9797BA621F43D43D00E288D9 /* HeaderTableViewCell.swift */,
-				9797BA601F43D37500E288D9 /* DailyDataTableViewCell.swift */,
 			);
 			name = Today;
 			sourceTree = "<group>";
@@ -212,9 +207,20 @@
 		9797BA6F1F447DC900E288D9 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				9797BA7B1F45D4B700E288D9 /* GankTableViewCell.swift */,
 				9797BA701F447DE000E288D9 /* CategoryCollectionViewCell.swift */,
+				9797BA781F45CF5F00E288D9 /* GankTableViewCell.xib */,
 			);
 			name = Category;
+			sourceTree = "<group>";
+		};
+		9797BA741F45CEDB00E288D9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				9797BA6E1F44702A00E288D9 /* Today */,
+				9797BA6F1F447DC900E288D9 /* Category */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +288,7 @@
 			files = (
 				9742BD3C1F1A530500496E57 /* LaunchScreen.storyboard in Resources */,
 				9742BD391F1A530500496E57 /* Assets.xcassets in Resources */,
+				9797BA7A1F45CF5F00E288D9 /* GankTableViewCell.xib in Resources */,
 				9742BD371F1A530500496E57 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,10 +356,11 @@
 				9742BD321F1A530500496E57 /* AppDelegate.swift in Sources */,
 				9797BA711F447DE000E288D9 /* CategoryCollectionViewCell.swift in Sources */,
 				9797BA4E1F431AB000E288D9 /* TabBarViewController.swift in Sources */,
+				9797BA731F44860600E288D9 /* SearchViewController.swift in Sources */,
+				9797BA7C1F45D4B700E288D9 /* GankTableViewCell.swift in Sources */,
 				9797BA651F445D6E00E288D9 /* CalendarCollectionViewCell.swift in Sources */,
 				9797BA471F43174700E288D9 /* Logger.swift in Sources */,
 				9797BA6A1F446D6600E288D9 /* StringExtension.swift in Sources */,
-				9797BA611F43D37500E288D9 /* DailyDataTableViewCell.swift in Sources */,
 				9797BA6C1F446EF700E288D9 /* UIColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

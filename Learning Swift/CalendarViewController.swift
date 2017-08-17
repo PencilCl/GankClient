@@ -32,7 +32,7 @@ class CalendarViewController: UIViewController {
         
         if validCell.isSelected {
             validCell.selectedBg.isHidden = false
-            validCell.dateLabel.textColor = UIColor.tintColor
+            validCell.dateLabel.textColor = UIColor.white
         } else {
             validCell.selectedBg.isHidden = true
             

@@ -10,5 +10,7 @@ import Foundation
 import UIKit
 
 extension UIColor {
-    static let tintColor = UIColor(red: 86, green: 119, blue: 252, alpha: 1)
+    static let tintColor = UIColor(hue: 0.63, saturation: 0.66, brightness: 0.99, alpha: 1)
+    
+    static let backgroundColor = UIColor(red: 249 / 255.0, green: 249 / 255.0, blue: 249 / 255.0, alpha: 1)
 }

@@ -62,6 +62,7 @@ class TodayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.register(UINib(nibName: "GankTableViewCell", bundle: nil), forCellReuseIdentifier: "GankData")
         tableView.estimatedRowHeight = 200
         tableView.rowHeight = UITableViewAutomaticDimension
     }
@@ -71,7 +72,7 @@ class TodayViewController: UIViewController {
 extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return data.count
-    }
+    }«
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (data[section]["data"] as? [[String: String]])?.count ?? 0
@@ -87,7 +88,7 @@ extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "dailyDataCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GankData", for: indexPath)
         return cell
     }
     
