@@ -48,7 +48,12 @@ extension CategoryViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "gankList", sender: categorys[indexPath.row]["category"])
+        if let category = categorys[indexPath.row]["category"] as? Category,
+            category == .meizi {
+            performSegue(withIdentifier: "pictureList", sender: categorys[indexPath.row]["category"])
+        } else {
+            performSegue(withIdentifier: "gankList", sender: categorys[indexPath.row]["category"])
+        }
     }
     
 }
