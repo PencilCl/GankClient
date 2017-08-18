@@ -18,6 +18,19 @@ class GankListViewController: UIViewController {
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "GankDetail":
+                if let gankCV = segue.destination as? WebViewController {
+                    gankCV.url = URL(string: "https://www.baidu.com")!
+                }
+            default:
+                break
+            }
+        }
+    }
 
 }
 
@@ -33,5 +46,13 @@ extension GankListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GankData", for: indexPath)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        defer {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+        
+        performSegue(withIdentifier: "GankDetail", sender: nil)
     }
 }

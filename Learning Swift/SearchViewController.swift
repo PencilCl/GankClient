@@ -31,22 +31,26 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        log.debug("view did load")
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
         // 在Storyboard设置header将不能固定header，设置tableHeaderView可以让header不滚动
-        tableView.tableHeaderView = searchController.searchBar
         tableView.register(UINib(nibName: "GankTableViewCell", bundle: nil), forCellReuseIdentifier: "GankData")
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        tableView.tableHeaderView = searchController.searchBar
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        log.debug("view will appear")
         searchController.isActive = true
         navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
+        tableView.tableHeaderView = searchController.searchBar
+        navigationController?.setNavigationBarHidden(false, animated: true)
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     
@@ -55,6 +59,19 @@ class SearchViewController: UIViewController {
         searchController.isActive = false
         searchController.searchBar.delegate = nil
         log.debug("deinit: \(type(of: self))")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "GankDetail":
+                if let gankCV = segue.destination as? WebViewController {
+                    gankCV.url = URL(string: "https://www.baidu.com")!
+                }
+            default:
+                break
+            }
+        }
     }
 
 }
@@ -83,5 +100,12 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "GankData", for: indexPath)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        defer {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
+        performSegue(withIdentifier: "GankDetail", sender: nil)
     }
 }

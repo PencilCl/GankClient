@@ -29,6 +29,8 @@
 		9797BA811F45E8D900E288D9 /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA801F45E8D900E288D9 /* Enum.swift */; };
 		9797BA831F4671BA00E288D9 /* MeiziViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA821F4671BA00E288D9 /* MeiziViewController.swift */; };
 		9797BA851F46732600E288D9 /* MeiziCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA841F46732600E288D9 /* MeiziCollectionViewCell.swift */; };
+		9797BA891F4680BB00E288D9 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA871F4680BB00E288D9 /* WebViewController.swift */; };
+		9797BA8C1F4681D400E288D9 /* WebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9797BA8B1F4681D400E288D9 /* WebView.storyboard */; };
 		C1431EA660AB098539B94E0A /* Pods_Learning_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7051E05ED4E412B541D84334 /* Pods_Learning_Swift.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,8 @@
 		9797BA801F45E8D900E288D9 /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		9797BA821F4671BA00E288D9 /* MeiziViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeiziViewController.swift; sourceTree = "<group>"; };
 		9797BA841F46732600E288D9 /* MeiziCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeiziCollectionViewCell.swift; sourceTree = "<group>"; };
+		9797BA871F4680BB00E288D9 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		9797BA8B1F4681D400E288D9 /* WebView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WebView.storyboard; sourceTree = "<group>"; };
 		B699511A5E7AC0789FCAB255 /* Pods-Learning Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Learning Swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Learning Swift/Pods-Learning Swift.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -161,6 +165,7 @@
 		9797BA481F43197500E288D9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				9797BA861F467D6B00E288D9 /* WebView */,
 				9797BA511F431CCD00E288D9 /* User */,
 				9797BA501F431CC800E288D9 /* Category */,
 				9797BA4F1F431CC300E288D9 /* Today */,
@@ -243,6 +248,15 @@
 			name = Constant;
 			sourceTree = "<group>";
 		};
+		9797BA861F467D6B00E288D9 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				9797BA871F4680BB00E288D9 /* WebViewController.swift */,
+				9797BA8B1F4681D400E288D9 /* WebView.storyboard */,
+			);
+			name = WebView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -309,6 +323,7 @@
 				9742BD3C1F1A530500496E57 /* LaunchScreen.storyboard in Resources */,
 				9742BD391F1A530500496E57 /* Assets.xcassets in Resources */,
 				9797BA7A1F45CF5F00E288D9 /* GankTableViewCell.xib in Resources */,
+				9797BA8C1F4681D400E288D9 /* WebView.storyboard in Resources */,
 				9742BD371F1A530500496E57 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +383,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9797BA891F4680BB00E288D9 /* WebViewController.swift in Sources */,
 				9797BA681F445ECA00E288D9 /* CalendarViewController.swift in Sources */,
 				9797BA631F43D43D00E288D9 /* HeaderTableViewCell.swift in Sources */,
 				9797BA5B1F431E5A00E288D9 /* CategoryViewController.swift in Sources */,

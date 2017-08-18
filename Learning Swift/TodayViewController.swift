@@ -66,7 +66,19 @@ class TodayViewController: UIViewController {
         tableView.estimatedRowHeight = 200
         tableView.rowHeight = UITableViewAutomaticDimension
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            switch identifier {
+            case "GankDetail":
+                if let gankCV = segue.destination as? WebViewController {
+                    gankCV.url = URL(string: "https://www.baidu.com")!
+                }
+            default:
+                break
+            }
+        }
+    }
 }
 
 extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
@@ -97,6 +109,6 @@ extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
             tableView.deselectRow(at: indexPath, animated: true)
         }
         
-        log.debug("\(indexPath.row) row \(indexPath.section) section")
+        performSegue(withIdentifier: "GankDetail", sender: nil)
     }
 }

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="CEo-4T-QdZ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--加载中...-->
+        <scene sceneID="n6d-WD-Gxb">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="CEo-4T-QdZ" customClass="WebViewController" customModule="Learning_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b5B-at-sM0"/>
+                        <viewControllerLayoutGuide type="bottom" id="wun-Bu-NLG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RwM-6s-Kfk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="cJY-nP-bw6">
+                                <rect key="frame" x="0.0" y="20" width="375" height="2"/>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="cJY-nP-bw6" secondAttribute="trailing" id="HM3-gm-TKx"/>
+                            <constraint firstItem="cJY-nP-bw6" firstAttribute="leading" secondItem="RwM-6s-Kfk" secondAttribute="leading" id="tey-bS-fXQ"/>
+                            <constraint firstItem="cJY-nP-bw6" firstAttribute="top" secondItem="b5B-at-sM0" secondAttribute="bottom" id="tzD-uN-y0M"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="加载中..." id="b50-81-3Zh">
+                        <barButtonItem key="leftBarButtonItem" image="back" id="3kX-Fq-ZhT">
+                            <connections>
+                                <action selector="goBack:" destination="CEo-4T-QdZ" id="ZFD-Qt-6nW"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="menu" id="q0u-Nn-6qb">
+                            <connections>
+                                <action selector="moreMenu:" destination="CEo-4T-QdZ" id="Ihf-7O-3QT"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="progressView" destination="cJY-nP-bw6" id="IV9-dx-1vA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S5w-nN-53B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-330.39999999999998" y="195.6521739130435"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="back" width="24" height="24"/>
+        <image name="menu" width="24" height="24"/>
+    </resources>
+</document>

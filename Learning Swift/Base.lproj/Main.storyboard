@@ -63,6 +63,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="TO2-Nr-qC2" id="bKJ-KT-LN7"/>
+                        <segue destination="4oI-Ha-gQ7" kind="show" identifier="GankDetail" id="ngw-CF-R8n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g7i-BZ-ckl" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -81,7 +82,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hD0-di-mwO">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hD0-di-mwO">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -95,6 +96,7 @@
                     </view>
                     <connections>
                         <outlet property="tableView" destination="hD0-di-mwO" id="VN5-Nz-xbx"/>
+                        <segue destination="4oI-Ha-gQ7" kind="show" identifier="GankDetail" id="9ho-Xg-RxA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uzm-b3-rp7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -383,6 +385,14 @@
             </objects>
             <point key="canvasLocation" x="-4933.6000000000004" y="1130.2848575712144"/>
         </scene>
+        <!--WebView-->
+        <scene sceneID="K5F-iB-UCX">
+            <objects>
+                <viewControllerPlaceholder storyboardName="WebView" id="4oI-Ha-gQ7" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lE7-33-A1o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4542" y="1552"/>
+        </scene>
         <!--干货集中营-->
         <scene sceneID="QBx-Vh-SLF">
             <objects>
@@ -528,6 +538,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="Z9V-ci-L57" id="WV0-sg-h1d"/>
+                        <segue destination="4oI-Ha-gQ7" kind="show" identifier="GankDetail" id="wvx-iI-8Ri"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h9c-Ck-CnC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -705,4 +716,7 @@
         <image name="unreadDot" width="8" height="8"/>
         <image name="user" width="24" height="24"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ngw-CF-R8n"/>
+    </inferredMetricsTieBreakers>
 </document>
