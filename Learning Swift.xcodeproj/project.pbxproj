@@ -12,6 +12,7 @@
 		9742BD391F1A530500496E57 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9742BD381F1A530500496E57 /* Assets.xcassets */; };
 		9742BD3C1F1A530500496E57 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9742BD3A1F1A530500496E57 /* LaunchScreen.storyboard */; };
 		975173DE1F47D22000D60303 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975173DD1F47D22000D60303 /* SettingTableViewController.swift */; };
+		975173E01F47D73F00D60303 /* OpenSourceComponentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975173DF1F47D73F00D60303 /* OpenSourceComponentTableViewController.swift */; };
 		9797BA471F43174700E288D9 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA461F43174700E288D9 /* Logger.swift */; };
 		9797BA4E1F431AB000E288D9 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA4D1F431AB000E288D9 /* TabBarViewController.swift */; };
 		9797BA531F431D5600E288D9 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA521F431D5600E288D9 /* TodayViewController.swift */; };
@@ -44,6 +45,7 @@
 		9742BD3B1F1A530500496E57 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9742BD3D1F1A530500496E57 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		975173DD1F47D22000D60303 /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
+		975173DF1F47D73F00D60303 /* OpenSourceComponentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpenSourceComponentTableViewController.swift; sourceTree = "<group>"; };
 		9797BA461F43174700E288D9 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		9797BA4D1F431AB000E288D9 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		9797BA521F431D5600E288D9 /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				975173DD1F47D22000D60303 /* SettingTableViewController.swift */,
+				975173DF1F47D73F00D60303 /* OpenSourceComponentTableViewController.swift */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				9797BA851F46732600E288D9 /* MeiziCollectionViewCell.swift in Sources */,
 				975173DE1F47D22000D60303 /* SettingTableViewController.swift in Sources */,
 				9797BA4E1F431AB000E288D9 /* TabBarViewController.swift in Sources */,
+				975173E01F47D73F00D60303 /* OpenSourceComponentTableViewController.swift in Sources */,
 				9797BA731F44860600E288D9 /* SearchViewController.swift in Sources */,
 				9797BA811F45E8D900E288D9 /* Enum.swift in Sources */,
 				9797BA7C1F45D4B700E288D9 /* GankTableViewCell.swift in Sources */,

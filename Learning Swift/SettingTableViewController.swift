@@ -11,7 +11,7 @@ import UIKit
 class SettingTableViewController: UITableViewController {
     @IBOutlet weak var newVersionView: UIView!
     
-    static let urlMap = [
+    let urlMap = [
         "ThankEditors": URL(string: "http://gank.io/backbone"),
         "ThankGank": URL(string: "http://gank.io/"),
         "AuthorGithub": URL(string: "https://github.com/PencilCl"),
@@ -32,7 +32,7 @@ class SettingTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier,
             let dstVC = segue.destination as? WebViewController,
-            let url = SettingTableViewController.urlMap[identifier] {
+            let url = urlMap[identifier] {
             dstVC.url = url
         }
     }

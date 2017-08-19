@@ -308,6 +308,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="yQQ-Yv-Jqb" kind="show" id="o5f-3V-ajj"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -436,6 +439,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Gf-iA-Jkf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1073" y="1099"/>
+        </scene>
+        <!--开源组件-->
+        <scene sceneID="Axc-nc-iY9">
+            <objects>
+                <tableViewController title="开源组件" id="yQQ-Yv-Jqb" customClass="OpenSourceComponentTableViewController" customModule="Learning_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2jO-je-qX5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="Rpg-j6-Mlt">
+                            <rect key="frame" x="0.0" y="72" width="375" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="—— 感谢开源分享者 ——" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njM-nI-0HV">
+                                    <rect key="frame" x="117" y="8" width="141" height="14.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="njM-nI-0HV" firstAttribute="centerX" secondItem="Rpg-j6-Mlt" secondAttribute="centerX" id="h3z-TP-Pvg"/>
+                                <constraint firstItem="njM-nI-0HV" firstAttribute="centerY" secondItem="Rpg-j6-Mlt" secondAttribute="centerY" id="oXm-JE-NKw"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="66Q-5g-imV" style="IBUITableViewCellStyleDefault" id="j2K-bo-uZS">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="j2K-bo-uZS" id="l6g-4B-ZAY">
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="66Q-5g-imV">
+                                            <rect key="frame" x="15" y="0.0" width="325" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="yQQ-Yv-Jqb" id="9fU-tz-e4a"/>
+                            <outlet property="delegate" destination="yQQ-Yv-Jqb" id="6A8-Hc-O6F"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="Tzr-WJ-fi9" kind="show" identifier="ComponentGithub" id="43H-o1-O9Q"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pL9-y0-edB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-991.20000000000005" y="1871.5142428785609"/>
         </scene>
         <!--Ib Calendar Data Source-->
         <scene sceneID="ZN7-nT-4Qg">
@@ -953,7 +1013,7 @@
         <image name="unreadDot" width="8" height="8"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UCW-VD-lCx"/>
+        <segue reference="43H-o1-O9Q"/>
         <segue reference="ngw-CF-R8n"/>
     </inferredMetricsTieBreakers>
 </document>
