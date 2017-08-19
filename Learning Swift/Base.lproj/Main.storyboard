@@ -68,7 +68,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g7i-BZ-ckl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3734" y="1872"/>
+            <point key="canvasLocation" x="-3647" y="1872"/>
         </scene>
         <!--Gank List View Controller-->
         <scene sceneID="fs6-XR-1bF">
@@ -181,7 +181,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3vd-KM-hZN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2082.4000000000001" y="1871.5142428785609"/>
+            <point key="canvasLocation" x="-2188" y="1872"/>
         </scene>
         <!--设置-->
         <scene sceneID="sPQ-Ey-ujb">
@@ -247,6 +247,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="gWe-wr-AJL" kind="show" id="nOS-1e-z9a"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -432,6 +435,94 @@
             </objects>
             <point key="canvasLocation" x="-1751.2" y="1130.2848575712144"/>
         </scene>
+        <!--干货推送-->
+        <scene sceneID="pPo-ag-xGW">
+            <objects>
+                <viewController title="干货推送" automaticallyAdjustsScrollViewInsets="NO" id="gWe-wr-AJL" customClass="NotifitionViewController" customModule="Learning_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KGS-Jf-8Kw"/>
+                        <viewControllerLayoutGuide type="bottom" id="h4K-55-b23"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0c2-ru-uaB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aPv-MA-616">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ekt-s4-cRr">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="G4m-Gq-XcM"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LzG-Jq-ARb">
+                                        <rect key="frame" x="16" y="140" width="343" height="251"/>
+                                        <string key="text">干货推送是利用系统特性解决第三方干货集中营客户端无法拥有原生推送的方案，你可以在这里选择开启或者关闭。你的 iOS 设备可以根据你使用干货集中营的频率和时间智能的安排干货集中营来获取每日更新的干货，并显示在应用图标上。你需要确保以下设置均为正确状态：
+
+1. 【设置】-【干货集中营】-【通知】权限为允许状态； 
+2. 【设置】-【干货集中营】-【后台应用刷新】权限为允许状态； 
+3. 如果上述权限都为允许状态，开启干货推送，enjoy it ！</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="干货推送" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GE9-rh-yw8">
+                                        <rect key="frame" x="20" y="27" width="101.5" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="有干货会第一时间推送给你~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjc-Vr-nQy">
+                                        <rect key="frame" x="20" y="63" width="179.5" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YC4-My-wji">
+                                        <rect key="frame" x="306" y="45" width="51" height="31"/>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="onTintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="switchNotification:" destination="gWe-wr-AJL" eventType="valueChanged" id="Ein-8R-IdW"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="GE9-rh-yw8" firstAttribute="leading" secondItem="ekt-s4-cRr" secondAttribute="leading" constant="20" id="5Ig-dh-WHw"/>
+                                    <constraint firstItem="LzG-Jq-ARb" firstAttribute="leading" secondItem="aPv-MA-616" secondAttribute="leading" constant="16" id="96l-Zh-Hqx"/>
+                                    <constraint firstItem="ekt-s4-cRr" firstAttribute="centerX" secondItem="aPv-MA-616" secondAttribute="centerX" id="99e-04-ncR"/>
+                                    <constraint firstItem="vjc-Vr-nQy" firstAttribute="top" secondItem="ekt-s4-cRr" secondAttribute="centerY" constant="3" id="Fg2-sR-w2Z"/>
+                                    <constraint firstItem="ekt-s4-cRr" firstAttribute="trailing" secondItem="YC4-My-wji" secondAttribute="trailing" constant="20" id="HeN-ao-P61"/>
+                                    <constraint firstItem="YC4-My-wji" firstAttribute="centerY" secondItem="ekt-s4-cRr" secondAttribute="centerY" id="NQ9-9B-CHV"/>
+                                    <constraint firstAttribute="bottom" secondItem="LzG-Jq-ARb" secondAttribute="bottom" constant="8" id="Ndh-WH-1rA"/>
+                                    <constraint firstItem="LzG-Jq-ARb" firstAttribute="top" secondItem="ekt-s4-cRr" secondAttribute="bottom" constant="20" id="Qij-Tj-gg9"/>
+                                    <constraint firstItem="vjc-Vr-nQy" firstAttribute="leading" secondItem="GE9-rh-yw8" secondAttribute="leading" id="bV0-05-nXa"/>
+                                    <constraint firstItem="ekt-s4-cRr" firstAttribute="top" secondItem="aPv-MA-616" secondAttribute="top" id="iCr-UP-K9u"/>
+                                    <constraint firstItem="LzG-Jq-ARb" firstAttribute="centerX" secondItem="aPv-MA-616" secondAttribute="centerX" id="lvX-eE-yYg"/>
+                                    <constraint firstItem="GE9-rh-yw8" firstAttribute="bottom" secondItem="ekt-s4-cRr" secondAttribute="centerY" constant="-3" id="oQv-q2-F38"/>
+                                    <constraint firstItem="ekt-s4-cRr" firstAttribute="leading" secondItem="aPv-MA-616" secondAttribute="leading" id="pHU-o2-WRI"/>
+                                    <constraint firstAttribute="trailing" secondItem="ekt-s4-cRr" secondAttribute="trailing" id="zHI-G0-Aga"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="aPv-MA-616" secondAttribute="trailing" id="bZC-dX-mMp"/>
+                            <constraint firstItem="aPv-MA-616" firstAttribute="top" secondItem="KGS-Jf-8Kw" secondAttribute="bottom" id="dw0-b1-NIO"/>
+                            <constraint firstItem="aPv-MA-616" firstAttribute="leading" secondItem="0c2-ru-uaB" secondAttribute="leading" id="edD-ud-MsQ"/>
+                            <constraint firstItem="h4K-55-b23" firstAttribute="top" secondItem="aPv-MA-616" secondAttribute="bottom" id="f7V-1b-YQd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bgImageView" destination="ekt-s4-cRr" id="Fos-r2-uz4"/>
+                        <outlet property="notificationSwitcher" destination="YC4-My-wji" id="n3h-K0-wiV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W2e-c8-acj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-642.39999999999998" y="793.8530734632684"/>
+        </scene>
         <!--WebView-->
         <scene sceneID="eAH-Yv-IQV">
             <objects>
@@ -495,7 +586,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pL9-y0-edB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-991.20000000000005" y="1871.5142428785609"/>
+            <point key="canvasLocation" x="-1372" y="1872"/>
         </scene>
         <!--Ib Calendar Data Source-->
         <scene sceneID="ZN7-nT-4Qg">
@@ -1013,7 +1104,7 @@
         <image name="unreadDot" width="8" height="8"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="43H-o1-O9Q"/>
+        <segue reference="vvf-Tb-tkH"/>
         <segue reference="ngw-CF-R8n"/>
     </inferredMetricsTieBreakers>
 </document>

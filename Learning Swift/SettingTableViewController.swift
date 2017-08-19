@@ -27,6 +27,11 @@ class SettingTableViewController: UITableViewController {
         defer {
             tableView.deselectRow(at: indexPath, animated: true)
         }
+        
+        if indexPath.section == 3,
+            newVersionView.isHidden == false {
+            newVersionView.isHidden = true
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
