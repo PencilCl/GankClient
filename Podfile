@@ -6,4 +6,5 @@ target 'Learning Swift' do
 
   pod 'XCGLogger', '~> 5.0.1'
   pod 'JTAppleCalendar', '~> 7.0'
+  pod 'SKPhotoBrowser', '~> 4.0.0'
 end

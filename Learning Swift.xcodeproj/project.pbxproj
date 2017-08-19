@@ -17,6 +17,7 @@
 		975173E41F47EB1D00D60303 /* GankUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975173E31F47EB1D00D60303 /* GankUserDefaults.swift */; };
 		975173E61F47EFB100D60303 /* GankNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975173E51F47EFB100D60303 /* GankNotification.swift */; };
 		975173E81F48614600D60303 /* BackgroundFetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975173E71F48614600D60303 /* BackgroundFetchService.swift */; };
+		975173EA1F486B9F00D60303 /* GankService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975173E91F486B9F00D60303 /* GankService.swift */; };
 		9797BA471F43174700E288D9 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA461F43174700E288D9 /* Logger.swift */; };
 		9797BA4E1F431AB000E288D9 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA4D1F431AB000E288D9 /* TabBarViewController.swift */; };
 		9797BA531F431D5600E288D9 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA521F431D5600E288D9 /* TodayViewController.swift */; };
@@ -54,6 +55,7 @@
 		975173E31F47EB1D00D60303 /* GankUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GankUserDefaults.swift; sourceTree = "<group>"; };
 		975173E51F47EFB100D60303 /* GankNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GankNotification.swift; sourceTree = "<group>"; };
 		975173E71F48614600D60303 /* BackgroundFetchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundFetchService.swift; sourceTree = "<group>"; };
+		975173E91F486B9F00D60303 /* GankService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GankService.swift; sourceTree = "<group>"; };
 		9797BA461F43174700E288D9 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		9797BA4D1F431AB000E288D9 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		9797BA521F431D5600E288D9 /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				975173E71F48614600D60303 /* BackgroundFetchService.swift */,
+				975173E91F486B9F00D60303 /* GankService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				9797BA7E1F45E55F00E288D9 /* GankListViewController.swift in Sources */,
 				975173E21F47E4D100D60303 /* NotifitionViewController.swift in Sources */,
 				975173E61F47EFB100D60303 /* GankNotification.swift in Sources */,
+				975173EA1F486B9F00D60303 /* GankService.swift in Sources */,
 				975173E41F47EB1D00D60303 /* GankUserDefaults.swift in Sources */,
 				9742BD321F1A530500496E57 /* AppDelegate.swift in Sources */,
 				975173E81F48614600D60303 /* BackgroundFetchService.swift in Sources */,

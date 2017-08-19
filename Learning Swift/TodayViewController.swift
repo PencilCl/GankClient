@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SKPhotoBrowser
 
 class TodayViewController: UIViewController {
     
@@ -58,6 +59,7 @@ class TodayViewController: UIViewController {
     ]
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var imageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +67,25 @@ class TodayViewController: UIViewController {
         tableView.register(UINib(nibName: "GankTableViewCell", bundle: nil), forCellReuseIdentifier: "GankData")
         tableView.estimatedRowHeight = 200
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showImage)))
+    }
+    
+    @objc func showImage() {
+        var images = [SKPhoto]()
+        if let image = imageView.image {
+            let photo = SKPhoto.photoWithImage(image)
+            images.append(photo)
+        } else {
+            let photo = SKPhoto.photoWithImageURL("https://i.stack.imgur.com/qdDEU.png")
+            photo.shouldCachePhotoURLImage = false
+            images.append(photo)
+        }
+        
+        let browser = SKPhotoBrowser(photos: images)
+        browser.initializePageIndex(0)
+        present(browser, animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

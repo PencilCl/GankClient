@@ -31,6 +31,10 @@ class GankListViewController: UIViewController {
             }
         }
     }
+    
+    deinit {
+        log.debug("deinit: \(type(of: self))")
+    }
 
 }
 
