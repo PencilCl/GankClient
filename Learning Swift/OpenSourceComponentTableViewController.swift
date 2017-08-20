@@ -12,7 +12,11 @@ class OpenSourceComponentTableViewController: UITableViewController {
     
     let components = [
         ["XCGLogger", "https://github.com/DaveWoodCom/XCGLogger"],
-        ["JTAppleCalendar", "https://github.com/patchthecode/JTAppleCalendar"]
+        ["JTAppleCalendar", "https://github.com/patchthecode/JTAppleCalendar"],
+        ["SKPhotoBrowser", "https://github.com/suzuki-0000/SKPhotoBrowser"],
+        ["SwiftyJSON", "https://github.com/SwiftyJSON/SwiftyJSON"],
+        ["Alamofire", "https://github.com/Alamofire/Alamofire"],
+        ["RxSwift", "https://github.com/ReactiveX/RxSwift"],
     ]
 
     override func numberOfSections(in tableView: UITableView) -> Int {
