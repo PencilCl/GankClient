@@ -17,7 +17,6 @@ extension Gank {
     }
 
     @NSManaged public var id: String?
-    @NSManaged public var createAt: NSDate?
     @NSManaged public var desc: String?
     @NSManaged public var publishedAt: NSDate?
     @NSManaged public var type: String?

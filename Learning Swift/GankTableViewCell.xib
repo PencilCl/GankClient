@@ -29,7 +29,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户体验极佳的干货集中营 iOS App" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwd-q8-U9h">
-                        <rect key="frame" x="32" y="37" width="275" height="20.5"/>
+                        <rect key="frame" x="32" y="37" width="318" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -76,6 +76,7 @@
                     <constraint firstItem="1H3-dK-udz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="ipA-ft-cCT"/>
                     <constraint firstItem="NWU-HM-jn7" firstAttribute="leading" secondItem="1H3-dK-udz" secondAttribute="trailing" constant="8" id="nrr-m6-Jqg"/>
                     <constraint firstItem="bpz-qc-f8P" firstAttribute="top" secondItem="cwd-q8-U9h" secondAttribute="bottom" constant="8" id="oJe-GH-bIv"/>
+                    <constraint firstItem="cwd-q8-U9h" firstAttribute="width" secondItem="vxH-bC-ohm" secondAttribute="width" id="ojo-XX-hQf"/>
                     <constraint firstItem="cUr-0C-RZ3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="ruq-4w-rvS"/>
                     <constraint firstItem="1H3-dK-udz" firstAttribute="leading" secondItem="cUr-0C-RZ3" secondAttribute="trailing" constant="8" id="vgP-25-BPl"/>
                     <constraint firstAttribute="bottomMargin" secondItem="vxH-bC-ohm" secondAttribute="bottom" id="wBo-5E-F2w"/>

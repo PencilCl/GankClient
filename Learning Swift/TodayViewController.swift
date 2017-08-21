@@ -10,56 +10,45 @@ import UIKit
 import SKPhotoBrowser
 
 class TodayViewController: UIViewController {
+    var categoryPos: [Int: Category] = [:]
     
-    let data = [
-        ["category": "iOS",
-         "data": [
-            ["title": "标题",
-             "url": "url",
-             "author": "作者"],
-            ["title": "标题",
-             "url": "url",
-             "author": "作者"],
-            ["title": "标题",
-             "url": "url",
-             "author": "作者"],
-            ["title": "标题",
-             "url": "url",
-             "author": "作者"]
-            ]
-        ],
-        ["category": "Android",
-         "data": [
-            ["title": "标题",
-             "url": "url",
-             "author": "作者"]
-            ]
-        ],
-        ["category": "前端",
-         "data": [
-            ["title": "标题",
-             "url": "url",
-             "author": "作者"]
-            ]
-        ],
-        ["category": "瞎推荐",
-         "data": [
-            ["title": "标题",
-             "url": "url",
-             "author": "作者"]
-            ]
-        ],
-        ["category": "休息视频",
-         "data": [
-            ["title": "标题",
-             "url": "url",
-             "author": "作者"]
-            ]
-        ],
-    ]
+    var data: [Category: [Gank]] = [:] {
+        didSet {
+            if tableView != nil {
+                tableView.reloadData()
+            }
+        }
+    }
+    
+    var imageUrl: String? {
+        didSet {
+            if let url = imageUrl {
+                log.debug(url)
+                imageView.setImage(url: url) { [weak self] in
+                    guard self != nil else { return }
+                    // 更新tableHeaderView和tableView的高度
+                    let tableView = self!.tableView!
+                    let tableHeaderView = self!.tableHeaderView!
+                    
+                    let tableViewContentSize = tableView.contentSize
+                    let originHeaderHeight = tableHeaderView.frame.height
+                    
+                    let imageSize = self!.imageView.image!.size
+                    let headerHeight = imageSize.height * SCREEN_WIDTH / imageSize.width + 46
+                    tableHeaderView.frame.size = CGSize(width: tableHeaderView.frame.width, height: headerHeight)
+                    let offset = headerHeight - originHeaderHeight
+                    tableView.contentSize = CGSize(width: tableViewContentSize.width, height: tableViewContentSize.height + offset)
+                }
+            }
+        }
+    }
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var tableHeaderView: UIView!
+    @IBOutlet weak var monthLabel: UILabel!
+    @IBOutlet weak var dayLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,6 +59,68 @@ class TodayViewController: UIViewController {
         
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showImage)))
+        
+        updateDateLabel()
+        
+        updateData()
+    }
+    
+    private func updateData() {
+        GankService.fetchLatestData { [weak self] (ganks, error) in
+            if self == nil { return }
+            
+            if error != nil {
+                self?.handleGankError(error!)
+                return
+            } else if ganks.count == 0 {
+                return
+            }
+            
+            self?.updateDateLabel(date: ganks.first!.publishedAt! as Date)
+            
+            var data = self!.data
+            var categoryPos = self!.categoryPos
+            categoryPos.removeAll()
+            var indexCategory: [Category: Int] = [:]
+            
+            for i in 0..<ganks.count {
+                let gank = ganks[i]
+                if let category = Category(rawValue: gank.type!) {
+                    if category == .meizi {
+                        self?.imageUrl = gank.url!
+                        continue
+                    }
+                    if let index = indexCategory[category] {
+                        data[categoryPos[index]!]!.append(gank)
+                    } else {
+                        indexCategory[category] = categoryPos.count
+                        categoryPos[categoryPos.count] = category
+                        data[category] = [gank]
+                    }
+                }
+            }
+            
+            self?.categoryPos = categoryPos
+            self?.data = data
+        }
+    }
+    
+    /*
+     更新日期信息
+     */
+    private func updateDateLabel(date: Date = Date()) {
+        let components = Calendar.current.dateComponents([.day, .month], from: date)
+        monthLabel.text = "\(components.month!)月"
+        dayLabel.text = "\(components.day!)"
+    }
+    
+    private func handleGankError(_ error: GankError) {
+        switch error {
+        case .requestError:
+            log.error("请求失败")
+        case .unkownError:
+            log.error("未知错误")
+        }
     }
     
     @objc func showImage() {
@@ -77,10 +128,12 @@ class TodayViewController: UIViewController {
         if let image = imageView.image {
             let photo = SKPhoto.photoWithImage(image)
             images.append(photo)
-        } else {
-            let photo = SKPhoto.photoWithImageURL("https://i.stack.imgur.com/qdDEU.png")
+        } else if let url = imageUrl {
+            let photo = SKPhoto.photoWithImageURL(url)
             photo.shouldCachePhotoURLImage = false
             images.append(photo)
+        } else {
+            log.debug("没有图片可以显示")
         }
         
         let browser = SKPhotoBrowser(photos: images)
@@ -92,8 +145,9 @@ class TodayViewController: UIViewController {
         if let identifier = segue.identifier {
             switch identifier {
             case "GankDetail":
-                if let gankCV = segue.destination as? WebViewController {
-                    gankCV.url = URL(string: "https://www.baidu.com")!
+                if let gankCV = segue.destination as? WebViewController,
+                    let url = sender as? String {
+                    gankCV.url = URL(string: url)!
                 }
             default:
                 break
@@ -108,20 +162,25 @@ extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (data[section]["data"] as? [[String: String]])?.count ?? 0
+        return data[categoryPos[section]!]!.count
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "sectionHeader"),
             let header = cell as? HeaderTableViewCell {
-            header.title = data[section]["category"] as? String
+            header.title = categoryPos[section]!.rawValue
             return header
         }
         return nil
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GankData", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GankData", for: indexPath) as! GankTableViewCell
+        
+        let gank = data[categoryPos[indexPath.section]!]![indexPath.row]
+        cell.showTypeLabel = false
+        cell.gank = gank
+        
         return cell
     }
     
@@ -130,6 +189,8 @@ extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
             tableView.deselectRow(at: indexPath, animated: true)
         }
         
-        performSegue(withIdentifier: "GankDetail", sender: nil)
+        let gank = data[categoryPos[indexPath.section]!]![indexPath.row]
+        
+        performSegue(withIdentifier: "GankDetail", sender: gank.url!)
     }
 }

@@ -923,7 +923,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="dayLabel" destination="g9z-66-saR" id="dXS-gD-T7L"/>
                         <outlet property="imageView" destination="pYd-5L-Bqf" id="A97-wG-V2q"/>
+                        <outlet property="monthLabel" destination="3oX-1x-xL1" id="8VX-Kk-uRC"/>
+                        <outlet property="tableHeaderView" destination="jt3-o4-hhe" id="fkU-5V-Ivs"/>
                         <outlet property="tableView" destination="Z9V-ci-L57" id="WV0-sg-h1d"/>
                         <segue destination="4oI-Ha-gQ7" kind="show" identifier="GankDetail" id="wvx-iI-8Ri"/>
                     </connections>
