@@ -26,8 +26,24 @@ final class BackgroundFetchService {
         UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalNever)
     }
     
-    class func performBackgroundFetch(_ completion: (UIBackgroundFetchResult) -> Void) {
-        completion(.noData)
+    class func performBackgroundFetch(_ completion: @escaping (UIBackgroundFetchResult) -> Void) {
+        // 今天已成功获取过则不再通知
+        if let date = GankUserDefaults.latestFetchDate,
+            Calendar.current.isDate(date, inSameDayAs: Date()) {
+            completion(.noData)
+            return
+        }
+        
+        GankService.getLatestDate { (date, error) in
+            if let date = date,
+                Calendar.current.isDate(date, inSameDayAs: Date()) {
+                GankNotification.push()
+                GankUserDefaults.latestFetchDate = Date()
+                completion(.newData)
+            } else {
+                completion(.failed)
+            }
+        }
     }
     
 }
