@@ -7,9 +7,22 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class SearchViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    
+    var loadMore = true
+    var isFetching = false
+    var page = 1
+    var searchResult = [Gank]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    var i = 5
     
     let searchController: UISearchController! = {
         let searchController = UISearchController(searchResultsController: nil)
@@ -31,13 +44,45 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        log.debug("view did load")
-        searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
         // 在Storyboard设置header将不能固定header，设置tableHeaderView可以让header不滚动
         tableView.register(UINib(nibName: "GankTableViewCell", bundle: nil), forCellReuseIdentifier: "GankData")
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
+        
+        bindSearchBar()
+    }
+    
+    private func bindSearchBar() {
+        searchController.searchBar.rx.text.orEmpty
+        .throttle(1, scheduler: MainScheduler.asyncInstance)
+        .distinctUntilChanged()
+        .flatMapLatest { [weak self] query -> Observable<[Gank]> in
+            Observable.create({ observer -> Disposable in
+                self?.page = 1
+                self?.loadMore = true
+                self?.isFetching = false
+                if query.isEmpty {
+                    self?.searchResult.removeAll()
+                    self?.loadMore = false
+                } else {
+                    GankService.search(content: query, page: 1, { (ganks, error) in
+                        if let error = error {
+                            log.error("search error \(error)")
+                        }
+                        observer.onNext(ganks)
+                    })
+                }
+                return Disposables.create { }
+            })
+        }
+        .observeOn(MainScheduler.instance)
+        .subscribe { [weak self] event in
+            if let ganks = event.element {
+                self?.searchResult = ganks
+                self?.tableView.reloadData()
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -65,21 +110,44 @@ class SearchViewController: UIViewController {
         if let identifier = segue.identifier {
             switch identifier {
             case "GankDetail":
-                if let gankCV = segue.destination as? WebViewController {
-                    gankCV.url = URL(string: "https://www.baidu.com")!
+                if let gankCV = segue.destination as? WebViewController,
+                    let url = sender as? String {
+                    gankCV.url = URL(string: url)!
                 }
             default:
                 break
             }
         }
     }
-
-}
-
-extension SearchViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        log.debug("search text: \(searchController.searchBar.text!)")
+    
+    func fetchMoreSearchResult() {
+        if !loadMore || isFetching {
+            return
+        }
+        isFetching = true
+        
+        let searchContent = searchController.searchBar.text!
+        GankService.search(content: searchContent, page: page) { [weak self] (ganks, error) in
+            guard let text = self?.searchController.searchBar.text,
+                text == searchContent else {
+                return
+            }
+            
+            self?.isFetching = false
+            if let error = error {
+                log.error("search error \(error)")
+                return
+            }
+            
+            if ganks.count < REQUEST_NUMS {
+                self?.loadMore = false
+            }
+                
+            self?.searchResult += ganks
+            self?.tableView.reloadData()
+        }
     }
+    
 }
 
 extension SearchViewController: UISearchBarDelegate {
@@ -94,11 +162,17 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return searchResult.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GankData", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GankData", for: indexPath) as! GankTableViewCell
+        cell.gank = searchResult[indexPath.row]
+        
+        if indexPath.row == searchResult.count - 1 {
+            fetchMoreSearchResult()
+        }
+        
         return cell
     }
     
@@ -106,6 +180,15 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         defer {
             tableView.deselectRow(at: indexPath, animated: true)
         }
-        performSegue(withIdentifier: "GankDetail", sender: nil)
+        
+        let gank = searchResult[indexPath.row]
+        let url = gank.url!
+        
+        if let category = Category(rawValue: gank.type!),
+            category == Category.meizi {
+            present(PhotoBrowser.photoBrowserController(url: url), animated: true, completion: nil)
+        } else {
+            performSegue(withIdentifier: "GankDetail", sender: url)
+        }
     }
 }

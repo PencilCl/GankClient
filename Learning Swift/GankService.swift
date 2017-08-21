@@ -156,7 +156,7 @@ public class GankService {
     }
     
     class func fetchGanksByCategory(category: Category, count: Int = REQUEST_NUMS, page: Int, _ completion: @escaping (_ data: [Gank], _ error: GankError?) -> Void) {
-        let url = BASE_URL + "/\(category.rawValue)/\(count)/\(page)"
+        let url = BASE_URL + "/data/\(category.rawValue)/\(count)/\(page)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         log.debug("fetch ganks by category url: \(url)")
         
         Alamofire.request(url)
@@ -186,7 +186,7 @@ public class GankService {
     }
     
     class func search(content: String, count: Int = REQUEST_NUMS, page: Int, _ completion: @escaping (_ data: [Gank], _ error: GankError?) -> Void) {
-        let url = BASE_URL + "/search/query/\(content)/category/all/count/\(count)/page/\(page)"
+        let url = BASE_URL + "/search/query/\(content)/category/all/count/\(count)/page/\(page)".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         log.debug("search url: \(url)")
         
         Alamofire.request(url)

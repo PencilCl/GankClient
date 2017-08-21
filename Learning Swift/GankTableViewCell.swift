@@ -31,7 +31,7 @@ class GankTableViewCell: UITableViewCell {
         titleLabel.text = gank.desc!
         authorLabel.text = "Via: \(gank.who!)"
         if showTypeLabel {
-            sortLabel.text = gank.type!
+            sortLabel.text = " \(gank.type!) "
             sortLabel.backgroundColor = COLOR_SORT_MAP[Category(rawValue: gank.type!)!]!
         } else {
             sortLabel.text = ""

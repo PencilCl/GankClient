@@ -47,7 +47,7 @@ final public class DB {
         
         gank.id = id
         gank.desc = value["desc"].stringValue
-        gank.publishedAt = formatGankDate(value["publishedAt"].stringValue)! as NSDate
+        gank.publishedAt = (formatGankDate(value["publishedAt"].stringValue) ?? Date()) as NSDate
         gank.type = value["type"].stringValue
         gank.url = value["url"].stringValue
         gank.used = value["used"].boolValue
@@ -168,7 +168,7 @@ final public class DB {
         // 先将日期格式转换为 2016-05-11 12:11:48
         let tmp = string.substring(to: string.index(string.startIndex, offsetBy: 19))
                         .replacingOccurrences(of: "T", with: " ")
-        return Date.fromString(tmp, format: "YYYY-MM-dd hh:mm:ss")
+        return Date.fromString(tmp, format: "YYYY-MM-dd HH:mm:ss")
     }
 }
 

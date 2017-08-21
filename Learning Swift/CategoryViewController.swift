@@ -28,8 +28,8 @@ class CategoryViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let desVC = segue.destination as? GankListViewController,
-            let title = sender as? Category {
-            desVC.title = title.rawValue
+            let category = sender as? Category {
+            desVC.category = category
         }
     }
 
