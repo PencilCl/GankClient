@@ -38,6 +38,10 @@ class TodayViewController: UIViewController {
                     tableHeaderView.frame.size = CGSize(width: tableHeaderView.frame.width, height: headerHeight)
                     let offset = headerHeight - originHeaderHeight
                     tableView.contentSize = CGSize(width: tableViewContentSize.width, height: tableViewContentSize.height + offset)
+                    
+                    // 使用reloadData方法刷新视图 (layoutIfNeeded无效)
+                    // 否则视图tableHeaderView将会挡住数据
+                    tableView.reloadData()
                 }
             }
         }
@@ -72,37 +76,56 @@ class TodayViewController: UIViewController {
             if error != nil {
                 self?.handleGankError(error!)
                 return
-            } else if ganks.count == 0 {
-                return
             }
             
-            self?.updateDateLabel(date: ganks.first!.publishedAt! as Date)
-            
-            var data = self!.data
-            var categoryPos = self!.categoryPos
-            categoryPos.removeAll()
-            var indexCategory: [Category: Int] = [:]
-            
-            for i in 0..<ganks.count {
-                let gank = ganks[i]
-                if let category = Category(rawValue: gank.type!) {
-                    if category == .meizi {
-                        self?.imageUrl = gank.url!
-                        continue
-                    }
-                    if let index = indexCategory[category] {
-                        data[categoryPos[index]!]!.append(gank)
-                    } else {
-                        indexCategory[category] = categoryPos.count
-                        categoryPos[categoryPos.count] = category
-                        data[category] = [gank]
-                    }
+            self?.handleGanksData(ganks)
+        }
+    }
+    
+    private func updateData(date: Date) {
+        GankService.getSomedayData(date: date) { [weak self] (ganks) in
+            self?.handleGanksData(ganks)
+        }
+    }
+    
+    /*
+     处理Gank数组数据
+     1. 将其转换为[Category: [Gank]]格式
+     2. 获取image url
+     3. 更新日期
+     */
+    private func handleGanksData(_ ganks: [Gank]) {
+        if ganks.count == 0 {
+            return
+        }
+        
+        updateDateLabel(date: ganks.first!.publishedAt! as Date)
+        
+        var data = self.data
+        var categoryPos = self.categoryPos
+        data.removeAll()
+        categoryPos.removeAll()
+        var indexCategory: [Category: Int] = [:]
+        
+        for i in 0..<ganks.count {
+            let gank = ganks[i]
+            if let category = Category(rawValue: gank.type!) {
+                if category == .meizi {
+                    self.imageUrl = gank.url!
+                    continue
+                }
+                if let index = indexCategory[category] {
+                    data[categoryPos[index]!]!.append(gank)
+                } else {
+                    indexCategory[category] = categoryPos.count
+                    categoryPos[categoryPos.count] = category
+                    data[category] = [gank]
                 }
             }
-            
-            self?.categoryPos = categoryPos
-            self?.data = data
         }
+        
+        self.categoryPos = categoryPos
+        self.data = data
     }
     
     /*
@@ -149,6 +172,12 @@ class TodayViewController: UIViewController {
                     let url = sender as? String {
                     gankCV.url = URL(string: url)!
                 }
+            case "History":
+                if let cV = segue.destination as? CalendarViewController {
+                    cV.chosenDate = { [weak self] date in
+                        self?.updateData(date: date)
+                    }
+                }
             default:
                 break
             }
@@ -162,13 +191,18 @@ extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data[categoryPos[section]!]!.count
+        if let category = categoryPos[section],
+            let count = data[category]?.count {
+            return count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "sectionHeader"),
-            let header = cell as? HeaderTableViewCell {
-            header.title = categoryPos[section]!.rawValue
+            let header = cell as? HeaderTableViewCell,
+            let category = categoryPos[section] {
+            header.title = category.rawValue
             return header
         }
         return nil

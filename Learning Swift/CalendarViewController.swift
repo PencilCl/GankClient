@@ -17,30 +17,45 @@ class CalendarViewController: UIViewController {
     @IBOutlet weak var yearLabel: UILabel!
     @IBOutlet weak var monthLabel: UILabel!
     
+    fileprivate var historyDates = [Date]()
+    
+    // 回调函数
+    var chosenDate: (_ date: Date) -> Void = { _ in  }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         calendarView.minimumLineSpacing = 0
         calendarView.minimumInteritemSpacing = 0
         calendarView.visibleDates { [weak self] visibleDates in
+            self?.calendarView.scrollToSegment(.end, animateScroll: false)
             self?.handleMonthChanged(visibleDates: visibleDates)
+        }
+        
+        updateHistoryDate();
+    }
+    
+    private func updateHistoryDate() {
+        GankService.getHistory { [weak self] dates in
+            self?.historyDates = dates
+            self?.calendarView.reloadData()
         }
     }
     
     func handleCellState(cell: JTAppleCell?, cellState: CellState) {
         guard let validCell = cell as? CalendarCollectionViewCell else { return }
-        
-        if validCell.isSelected {
+
+        if historyDates.contains(cellState.date) {
             validCell.selectedBg.isHidden = false
             validCell.dateLabel.textColor = UIColor.white
         } else {
             validCell.selectedBg.isHidden = true
-            
             validCell.dateLabel.textColor = UIColor.black
             if cellState.dateBelongsTo != .thisMonth {
                 validCell.dateLabel.textColor = UIColor.lightGray
             }
         }
+        
     }
     
     func handleMonthChanged(visibleDates: DateSegmentInfo) {
@@ -64,10 +79,9 @@ extension CalendarViewController: JTAppleCalendarViewDataSource {
         formatter.timeZone = Calendar.current.timeZone
         formatter.locale = Calendar.current.locale
         
-        let startDate = formatter.date(from: "2017 01 01")!
-        let endDate = formatter.date(from: "2017 12 31")!
+        let startDate = formatter.date(from: "2015 05 01")!
         
-        let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate)
+        let parameters = ConfigurationParameters(startDate: startDate, endDate: Date())
         return parameters
     }
 }
@@ -83,11 +97,12 @@ extension CalendarViewController: JTAppleCalendarViewDelegate  {
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
-        handleCellState(cell: cell, cellState: cellState)
-    }
-    
-    func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
-        handleCellState(cell: cell, cellState: cellState)
+        if historyDates.contains(cellState.date) {
+            // 查看历史干货数据
+            log.debug("select date: \(date.toString())")
+            chosenDate(date)
+            navigationController?.popViewController(animated: true)
+        }
     }
     
     func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {

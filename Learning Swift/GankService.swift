@@ -104,6 +104,23 @@ public class GankService {
         return (ganks, nil)
     }
     
+    /*
+     获取发布过干货的日期数组
+     Note: completion方法正常情况下将被调用两次
+     1. 为了更快的获取到历史，第一次会从数据库中获取并返回，
+     2. 若网络请求成功，第二次会返回最新的历史日期数组
+     */
+    class func getHistory(_ completion: @escaping (_ data: [Date]) -> Void) {
+        DispatchQueue.global().async {
+            completion(DB.getHistorys().map { $0.date! as Date })
+        }
+        fetchHistory { (dates, error) in
+            if error == nil {
+                completion(dates)
+            }
+        }
+    }
+    
     class func fetchHistory(_ completion: @escaping (_ data: [Date], _ error: GankError?) -> Void) {
         let url = BASE_URL + "/day/history"
         log.debug("fetch history")

@@ -88,6 +88,9 @@ final public class DB {
         }
     }
     
+    /*
+     获取某天的Gank数据
+     */
     public class func getGanks(date: Date) -> [Gank] {
         let request: NSFetchRequest<Gank> = Gank.fetchRequest()
         let endDate = Calendar.current.date(byAdding: .day, value: 1, to: date)
@@ -125,6 +128,17 @@ final public class DB {
         let gankHistory = NSEntityDescription.insertNewObject(forEntityName: gankHistoryEntityName, into: context) as! GankHistory
         gankHistory.date = date
         return gankHistory
+    }
+    
+    public class func getHistorys() -> [GankHistory] {
+        let request: NSFetchRequest<GankHistory> = GankHistory.fetchRequest()
+        do {
+            return try context.fetch(request)
+        } catch {
+            log.error("fetch gank history error")
+        }
+        
+        return [GankHistory]()
     }
     
     /*

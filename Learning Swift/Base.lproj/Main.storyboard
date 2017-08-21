@@ -918,7 +918,7 @@
                         <barButtonItem key="backBarButtonItem" title="返回" id="nI8-tj-V8E"/>
                         <barButtonItem key="rightBarButtonItem" image="calendar" id="rZ8-b6-NpJ">
                             <connections>
-                                <segue destination="pr8-WM-uoG" kind="show" id="uSg-9V-akg"/>
+                                <segue destination="pr8-WM-uoG" kind="show" identifier="History" id="uSg-9V-akg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
