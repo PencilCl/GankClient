@@ -20,6 +20,9 @@ class TodayViewController: UIViewController {
         }
     }
     
+    // 当前显示数据的日期
+    var currentDate: Date?
+    
     var imageUrl: String? {
         didSet {
             if let url = imageUrl {
@@ -132,6 +135,7 @@ class TodayViewController: UIViewController {
      更新日期信息
      */
     private func updateDateLabel(date: Date = Date()) {
+        currentDate = date
         let components = Calendar.current.dateComponents([.day, .month], from: date)
         monthLabel.text = "\(components.month!)月"
         dayLabel.text = "\(components.day!)"
@@ -177,6 +181,7 @@ class TodayViewController: UIViewController {
                     cV.chosenDate = { [weak self] date in
                         self?.updateData(date: date)
                     }
+                    cV.scrollToDate = currentDate ?? Date()
                 }
             default:
                 break

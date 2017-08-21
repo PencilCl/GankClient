@@ -21,6 +21,7 @@ class CalendarViewController: UIViewController {
     
     // 回调函数
     var chosenDate: (_ date: Date) -> Void = { _ in  }
+    var scrollToDate: Date = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +29,7 @@ class CalendarViewController: UIViewController {
         calendarView.minimumLineSpacing = 0
         calendarView.minimumInteritemSpacing = 0
         calendarView.visibleDates { [weak self] visibleDates in
-            self?.calendarView.scrollToSegment(.end, animateScroll: false)
+            self?.calendarView.scrollToDate(self?.scrollToDate ?? Date(), animateScroll: false)
             self?.handleMonthChanged(visibleDates: visibleDates)
         }
         
