@@ -48,7 +48,7 @@ class TodayViewController: UIViewController {
     }
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageView: CLImageView!
     @IBOutlet weak var tableHeaderView: UIView!
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var dayLabel: UILabel!

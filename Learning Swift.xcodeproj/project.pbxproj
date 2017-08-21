@@ -28,8 +28,8 @@
 		975174121F496CF300D60303 /* DB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975174111F496CF300D60303 /* DB.swift */; };
 		975174191F49807F00D60303 /* GankHistory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975174171F49807F00D60303 /* GankHistory+CoreDataClass.swift */; };
 		9751741A1F49807F00D60303 /* GankHistory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975174181F49807F00D60303 /* GankHistory+CoreDataProperties.swift */; };
-		9751741C1F49CD9900D60303 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9751741B1F49CD9900D60303 /* UIImageViewExtension.swift */; };
 		975174201F4AD9A800D60303 /* PhotoBrowser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9751741F1F4AD9A800D60303 /* PhotoBrowser.swift */; };
+		975174221F4AFBB200D60303 /* CLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 975174211F4AFBB200D60303 /* CLImageView.swift */; };
 		9797BA471F43174700E288D9 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA461F43174700E288D9 /* Logger.swift */; };
 		9797BA4E1F431AB000E288D9 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA4D1F431AB000E288D9 /* TabBarViewController.swift */; };
 		9797BA531F431D5600E288D9 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9797BA521F431D5600E288D9 /* TodayViewController.swift */; };
@@ -78,8 +78,8 @@
 		975174111F496CF300D60303 /* DB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DB.swift; sourceTree = "<group>"; };
 		975174171F49807F00D60303 /* GankHistory+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GankHistory+CoreDataClass.swift"; sourceTree = "<group>"; };
 		975174181F49807F00D60303 /* GankHistory+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GankHistory+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		9751741B1F49CD9900D60303 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		9751741F1F4AD9A800D60303 /* PhotoBrowser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoBrowser.swift; sourceTree = "<group>"; };
+		975174211F4AFBB200D60303 /* CLImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLImageView.swift; sourceTree = "<group>"; };
 		9797BA461F43174700E288D9 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		9797BA4D1F431AB000E288D9 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		9797BA521F431D5600E288D9 /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -259,7 +259,7 @@
 				9797BA691F446D6600E288D9 /* StringExtension.swift */,
 				9797BA6B1F446EF700E288D9 /* UIColorExtension.swift */,
 				9751740D1F49653900D60303 /* DateExtension.swift */,
-				9751741B1F49CD9900D60303 /* UIImageViewExtension.swift */,
+				975174211F4AFBB200D60303 /* CLImageView.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -455,6 +455,7 @@
 				975173E61F47EFB100D60303 /* GankNotification.swift in Sources */,
 				975173EA1F486B9F00D60303 /* GankService.swift in Sources */,
 				975173E41F47EB1D00D60303 /* GankUserDefaults.swift in Sources */,
+				975174221F4AFBB200D60303 /* CLImageView.swift in Sources */,
 				9742BD321F1A530500496E57 /* AppDelegate.swift in Sources */,
 				975174091F4922A400D60303 /* Gank+CoreDataClass.swift in Sources */,
 				975174101F4966AF00D60303 /* Const.swift in Sources */,
@@ -466,7 +467,6 @@
 				975173DE1F47D22000D60303 /* SettingTableViewController.swift in Sources */,
 				9751740B1F4922A400D60303 /* GankImage+CoreDataClass.swift in Sources */,
 				975174191F49807F00D60303 /* GankHistory+CoreDataClass.swift in Sources */,
-				9751741C1F49CD9900D60303 /* UIImageViewExtension.swift in Sources */,
 				9797BA4E1F431AB000E288D9 /* TabBarViewController.swift in Sources */,
 				975173E01F47D73F00D60303 /* OpenSourceComponentTableViewController.swift in Sources */,
 				975174121F496CF300D60303 /* DB.swift in Sources */,

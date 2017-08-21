@@ -9,7 +9,18 @@
 import UIKit
 
 class MeiziCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageView: CLImageView!
     @IBOutlet weak var dateLabel: UILabel!
     
+    var gank: Gank? {
+        didSet {
+            updateUI()
+        }
+    }
+    
+    private func updateUI() {
+        if let gank = gank {
+            dateLabel.text = (gank.publishedAt! as Date).toString()
+        }
+    }
 }
