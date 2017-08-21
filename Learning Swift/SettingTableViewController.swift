@@ -15,7 +15,7 @@ class SettingTableViewController: UITableViewController {
         "ThankEditors": URL(string: "http://gank.io/backbone"),
         "ThankGank": URL(string: "http://gank.io/"),
         "AuthorGithub": URL(string: "https://github.com/PencilCl"),
-        "ProjectGithub": URL(string: "https://github.com/PencilCl"),
+        "ProjectGithub": URL(string: "https://github.com/PencilCl/GankClient.git"),
         "AboutAuthor": URL(string: "http://pencilsky.cn/")
     ]
 
