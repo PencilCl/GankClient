@@ -4,10 +4,10 @@ PODS:
   - ObjcExceptionBridging (1.0.1):
     - ObjcExceptionBridging/ObjcExceptionBridging (= 1.0.1)
   - ObjcExceptionBridging/ObjcExceptionBridging (1.0.1)
-  - RxCocoa (3.6.1):
-    - RxSwift (~> 3.6)
-  - RxSwift (3.6.1)
-  - SKPhotoBrowser (4.0.1)
+  - RxCocoa (4.1.2):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.1.2)
+  - SKPhotoBrowser (5.0.3)
   - SwiftyJSON (3.1.4)
   - XCGLogger (5.0.1):
     - XCGLogger/Core (= 5.0.1)
@@ -17,9 +17,9 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.4)
   - JTAppleCalendar (~> 7.0)
-  - RxCocoa (~> 3.0)
-  - RxSwift (~> 3.0)
-  - SKPhotoBrowser (~> 4.0.0)
+  - RxCocoa (~> 4.0)
+  - RxSwift (~> 4.0)
+  - SKPhotoBrowser (~> 5.0.0)
   - SwiftyJSON
   - XCGLogger (~> 5.0.1)
 
@@ -27,12 +27,12 @@ SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   JTAppleCalendar: 6a942475e33b9ad4dee0a0e14aa4c63adcf4f543
   ObjcExceptionBridging: c30e00eb3700467e695faeea30e26e18bd445001
-  RxCocoa: 84a08739ab186248c7f31ce4ee92d6f8a947d690
-  RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
-  SKPhotoBrowser: 3a7c6fc02aa1620ab17253a47a49fafda46536e8
+  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  SKPhotoBrowser: 6de77f7004442e79059f19d86e2e7e6a03b43a13
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
   XCGLogger: 0b43697155d41e4a1b15fc776f319c2141646b09
 
-PODFILE CHECKSUM: 5b649e47e97323348b74555d28067360f88ae1cb
+PODFILE CHECKSUM: cc4ccc51f8a66bff2b9e997d387935fb992028b6
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.4.0
